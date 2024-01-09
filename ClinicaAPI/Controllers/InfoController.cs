@@ -14,7 +14,7 @@ namespace ClinicaAPI.Controllers
         {
             _InfoInterface = InfoInterface;
         }
-        [Authorize]
+        //[Authorize]
         [HttpGet("id")]
         public async Task<ActionResult<ServiceResponse<InfoModel>>> GetInfobyId(int Id)
         {

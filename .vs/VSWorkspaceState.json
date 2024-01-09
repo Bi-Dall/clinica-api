@@ -1,6 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ClinicaAPI"
   ],
+  "SelectedNode": "\\ClinicaAPI\\appsettings.json",
   "PreviewInSolutionExplorer": false
 }
