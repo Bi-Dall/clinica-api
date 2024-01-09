@@ -76,22 +76,21 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+
+// builder => builder.WithOrigins("http://34.66.160.170")
+//builder => builder.WithOrigins("http://localhost:4200")
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowMyOrigin",
-        
-        builder => builder.WithOrigins("http://34.170.174.186")
-       
+    options.AddPolicy("AllowMyOrigin",        
+        builder => builder.WithOrigins("http://34.170.174.186/")       
                           .AllowAnyMethod()
                           .AllowCredentials()
                           .AllowAnyHeader());
 });
-// builder => builder.WithOrigins("http://34.66.160.170")
-        //builder => builder.WithOrigins("http://localhost:4200")
 
 
 
-//======================================
+
 
 /*
 builder.Services.AddAuthentication().AddGoogle(options =>
@@ -144,12 +143,11 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-
 app.UseCors("AllowMyOrigin");
 
 app.UseAuthentication();
-app.UseAuthorization();
 
+app.UseAuthorization();
 
 app.UseHttpsRedirection();
 
