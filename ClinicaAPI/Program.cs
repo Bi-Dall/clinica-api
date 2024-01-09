@@ -83,6 +83,7 @@ builder.Services.AddCors(options =>
         builder => builder.WithOrigins("http://34.170.174.186")
        
                           .AllowAnyMethod()
+                          .AllowCredentials()
                           .AllowAnyHeader());
 });
 // builder => builder.WithOrigins("http://34.66.160.170")
