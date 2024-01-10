@@ -77,8 +77,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
-// builder => builder.WithOrigins("http://34.66.160.170")
-//builder => builder.WithOrigins("http://localhost:4200")
+
+/*
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowMyOrigin",        
@@ -88,7 +88,7 @@ builder.Services.AddCors(options =>
                           .AllowAnyMethod()
                           .AllowAnyHeader());
 });
-
+*/
 
 
 
@@ -144,7 +144,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseCors("AllowMyOrigin");
+//app.UseCors("AllowMyOrigin");
 
 app.UseAuthentication();
 
