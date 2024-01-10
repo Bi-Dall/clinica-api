@@ -82,7 +82,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowMyOrigin",        
-        builder => builder.WithOrigins("http://34.170.174.186")       
+        builder => builder
+                      .AllowAnyOrigin()
+                      //.WithOrigins("http://34.170.174.186")       
                           .AllowAnyMethod()
                           .AllowCredentials()
                           .AllowAnyHeader());
