@@ -78,7 +78,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 });
 
 
-/*
+
+
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowMyOrigin",        
@@ -88,7 +90,7 @@ builder.Services.AddCors(options =>
                           .AllowAnyMethod()
                           .AllowAnyHeader());
 });
-*/
+
 
 
 
@@ -144,7 +146,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-//app.UseCors("AllowMyOrigin");
+app.UseCors("AllowMyOrigin");
 
 app.UseAuthentication();
 
